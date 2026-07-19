@@ -42,6 +42,13 @@ a:hover { text-decoration-thickness: 2px; }
   gap: 24px;
 }
 
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
 .brand {
   color: var(--ink);
   font-size: 1.35rem;
@@ -62,6 +69,21 @@ a:hover { text-decoration-thickness: 2px; }
 
 nav { display: flex; gap: 18px; flex-wrap: wrap; }
 nav a { color: var(--ink); font-weight: 800; text-decoration: none; }
+
+.locale-nav { gap: 6px; justify-content: flex-end; }
+.locale-nav a {
+  min-width: 34px;
+  padding: 4px 8px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.1;
+  text-align: center;
+}
+.locale-nav a:hover,
+.locale-nav a:focus-visible { border-color: var(--line); color: var(--ink); }
+.locale-nav a.active { border-color: var(--line); background: var(--yellow); color: var(--ink); }
 
 main { padding: 56px 0 80px; }
 
@@ -120,6 +142,8 @@ footer { border-top: 3px solid var(--line); padding: 28px 0 40px; color: var(--m
 
 @media (max-width: 680px) {
   .header-inner { align-items: flex-start; flex-direction: column; padding: 18px 0; gap: 10px; }
+  .header-actions { width: 100%; align-items: flex-start; }
+  .locale-nav { justify-content: flex-start; }
   main { padding-top: 38px; }
   .grid { grid-template-columns: 1fr; }
   .notice, .card, .content-card { border-radius: 19px; box-shadow: 4px 5px 0 var(--line); }
